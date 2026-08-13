@@ -1,8 +1,12 @@
 import joblib
+from pathlib import Path
 
-model = joblib.load("../model/student_model.pkl")
+# Project root directory
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-encoders = joblib.load("../model/label_encoders.pkl")
+# Load ML model and encoders
+model = joblib.load(BASE_DIR / "model" / "student_model.pkl")
+encoders = joblib.load(BASE_DIR / "model" / "label_encoders.pkl")
 
 import streamlit as st
 
